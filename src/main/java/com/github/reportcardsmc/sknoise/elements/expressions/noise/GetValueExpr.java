@@ -10,7 +10,7 @@ import ch.njol.skript.lang.SkriptParser;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
 import com.github.reportcardsmc.sknoise.utilities.noise.NoiseGenerator;
-import org.bukkit.Location;
+import net.minestom.server.coordinate.Point;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.Nullable;
 
@@ -21,12 +21,12 @@ public class GetValueExpr extends SimpleExpression<Number> {
 
     static {
         Skript.registerExpression(GetValueExpr.class, Number.class, ExpressionType.COMBINED,
-                "[sknoise] value (of|using) %noisegenerator% at %location%",
+                "[sknoise] value (of|using) %noisegenerator% at %point%",
                 "[sknoise] value (of|using) %noisegenerator% at %number%[,] %number%[,] [and] %number%");
     }
 
     Expression<NoiseGenerator> generatorExpression;
-    Expression<Location> locationExpression;
+    Expression<Point> locationExpression;
     Expression<Number> xExpr;
     Expression<Number> yExpr;
     Expression<Number> zExpr;
@@ -41,9 +41,9 @@ public class GetValueExpr extends SimpleExpression<Number> {
         Number zNum = null;
         if (match == 0) {
             if (locationExpression.getSingle(e) == null) return null;
-            xNum = locationExpression.getSingle(e).getX();
-            yNum = locationExpression.getSingle(e).getY();
-            zNum = locationExpression.getSingle(e).getZ();
+            xNum = locationExpression.getSingle(e).x();
+            yNum = locationExpression.getSingle(e).y();
+            zNum = locationExpression.getSingle(e).z();
         }
         else {
             xNum = xExpr.getSingle(e);
@@ -75,7 +75,7 @@ public class GetValueExpr extends SimpleExpression<Number> {
         generatorExpression = (Expression<NoiseGenerator>) exprs[0];
         match = matchedPattern;
         if (matchedPattern == 0) {
-            locationExpression = (Expression<Location>) exprs[1];
+            locationExpression = (Expression<Point>) exprs[1];
         } else if (matchedPattern == 1) {
             xExpr = (Expression<Number>) exprs[1];
             yExpr = (Expression<Number>) exprs[2];

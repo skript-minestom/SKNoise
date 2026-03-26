@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://www.m a ven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ReportCards</groupId>
@@ -9,24 +9,25 @@
     <version>1.0.2</version>
     <packaging>jar</packaging>
     <name>SKNoise</name>
-    <description>Implement noise generator functions into skript!</description>
+
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>25</java.version>
+        <maven.compiler.release>25</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.11.0</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <release>${maven.compiler.release}</release>
                 </configuration>
             </plugin>
-
         </plugins>
+
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -34,23 +35,11 @@
             </resource>
         </resources>
     </build>
+
     <repositories>
         <repository>
-            <id>skript-releases</id>
-            <name>Skript Repository</name>
-            <url>https://repo.skriptlang.org/releases</url>
-        </repository>
-        <repository>
-            <id>destroystokyo-repo</id>
-            <url>https://repo.destroystokyo.com/content/repositories/snapshots/</url>
-        </repository>
-        <repository>
-            <id>papermc-repo</id>
-            <url>https://papermc.io/repo/repository/maven-public/</url>
-        </repository>
-        <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/groups/public/</url>
+            <id>hapily-snapshots</id>
+            <url>https://maven.hapily.me/snapshots</url>
         </repository>
     </repositories>
 
@@ -60,31 +49,11 @@
             <artifactId>annotations</artifactId>
             <version>13.0</version>
         </dependency>
+
         <dependency>
-            <groupId>com.destroystokyo.paper</groupId>
-            <artifactId>paper-api</artifactId>
-            <version>1.16.5-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.SkriptLang</groupId>
-            <artifactId>Skript</artifactId>
-            <version>2.8.0</version>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.sk89q.worldguard</groupId>
-                    <artifactId>worldguard-legacy</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.github.marcelo-mason</groupId>
-                    <artifactId>PreciousStones</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>net.milkbowl.vault</groupId>
-                    <artifactId>Vault</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>com.github.hapily04</groupId>
+            <artifactId>skript-minestom</artifactId>
+            <version>1.0.0-alpha.1</version>
         </dependency>
     </dependencies>
 </project>
