@@ -7,7 +7,7 @@
 
 ---
 
-Welcome to the repository of skNoise, everything is documented on Skript Hub (Located above).
+Welcome to the repository of skNoise, everything is documented on the website linked above.
 
 skNoise adds a bunch of cool number generators to use for anything that uses pseudo numbers, some use cases could be:
 
