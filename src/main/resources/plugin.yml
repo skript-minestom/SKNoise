@@ -4,5 +4,6 @@ main: com.github.reportcardsmc.sknoise.SkNoise
 api-version: 1.16
 prefix: skNoise
 depend: [ Skript ]
-authors: [ ReportCards ]
-description: Implement noise generator functions into skript!
+authors: [ ReportCards, hapily ]
+description: Implement noise generator functions into skript-minestom!
+website: https://github.com/skript-minestom/SKNoise
