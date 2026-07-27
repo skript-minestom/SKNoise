@@ -3,9 +3,7 @@
 
 ###### The ultimate noise addon
 
-[![Get on skUnity](https://skunity.com/branding/buttons/get_on_forums.png)](https://docs.skunity.com/syntax/search/addon:sknoise)
-
-[![SkriptHubViewTheDocs](http://skripthub.net/static/addon/ViewTheDocsButton.png)](http://skripthub.net/docs/?addon=SKNoise)
+[Documentation](https://smdocs.hapily.me/?addons=skNoise)
 
 ---
 
